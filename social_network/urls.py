@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from rest_framework.urlpatterns import format_suffix_patterns
 from social_network import views
 
@@ -7,7 +7,8 @@ urlpatterns = [
     path('posts/', views.PostList.as_view(), name='post-list'),
     path('posts/<int:pk>/', views.PostDetail.as_view(), name='post-detail'),
     path('users/', views.UserList.as_view(), name='user-list'),
-    path('users/<int:pk>', views.UserDetail.as_view(), name='user-detail'),
+    path('users/<int:pk>/', views.UserDetail.as_view(), name='user-detail'),
+    path('users/registration/', include('rest_auth.registration.urls'), name='user-registration'),
     path('', views.api_root)
 ]
 

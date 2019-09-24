@@ -13,7 +13,7 @@ from rest_framework.reverse import reverse # new
 def api_root(request, format=None):
     return Response({
         'users' : reverse('user-list', request=request, format=format),
-        'posts' : reverse('post-list', request=request, format=format)
+        'posts' : reverse('post-list', request=request, format=format),
     })
 
 
