@@ -1,0 +1,9 @@
+#MAC
+.DS_Store
+
+venv
+.idea
+/venv
+pycache
+.env
+
